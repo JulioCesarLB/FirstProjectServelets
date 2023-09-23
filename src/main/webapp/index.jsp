@@ -1,5 +1,7 @@
+
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +10,11 @@
 </head>
 <body>
 
-<%
-
-String [] esportes ={"Futebol","Vôlei", "Tênis", "Basquete","Patins"};
-	for(String s : esportes)
-		out.print("<li> "+s+"</li>");
-%>
+	<%
+	List<String> acoes = (List) request.getAttribute("acoes");
+	for (String s : acoes)
+		out.print("<li> " + s + "</li>");
+	%>
 
 </body>
 </html>
